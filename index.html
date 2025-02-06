@@ -12,6 +12,16 @@
         box-sizing: border-box;
       }
 
+
+      body {
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
       body {
         font-family: 'Inter', sans-serif;
         background: white;
@@ -30,7 +40,7 @@
         border-bottom: 1px solid #eee;
         background-color: white;
         border: solid 1px #D400A6;
-        border-radius: 15px;
+        border-radius: 23px;
       }
 
       .logo-section {
@@ -85,19 +95,19 @@
         width: 60%;
       }
     
-
-      .content-container {
+      
+      /* .content-container {
         position: relative;
-        min-height: calc(100vh - 160px); /* Subtract header and footer height */
+        min-height: calc(100vh - 160px); 
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 2rem; /* Add padding for footer */
-        overflow: hidden; /* Ensure background stays contained */
-      }
+        padding: 2rem; 
+        overflow: hidden; 
+      } */
 
        /* Move grid above background image */
-       .grid-background {
+       /* .grid-background {
         position: absolute;
         top: 0;
         left: 0;
@@ -109,11 +119,11 @@
         opacity: 0.5;
         transform: perspective(500px) rotateX(45deg);
         pointer-events: none;
-        z-index: 2; /* Place grid above background image */
-      }
+        z-index: 2; /* 
+      } */
 
       /* Add background image container */
-      .background-image {
+      /* .background-image {
         position: absolute;
         top: 0;
         left: 0;
@@ -123,9 +133,9 @@
         background-image: url('./images/xyz.svg'); 
         background-size: contain;
         background-repeat: no-repeat;
-                /* background-position: center; */
-        opacity: 1; /* Adjust opacity as needed */
-      }
+        background-position: center; 
+        opacity: 1; 
+      } */
 
      
 
@@ -139,50 +149,72 @@
       }
 
       .left-box {
-        position: absolute;
-        left: 10%;
-        top: 58%;
-        transform: translateY(-50%);
-        width: 300px;
-        /* background-color: #fef08a;
-        padding: 2rem; */
+        /* position: absolute; */
+        /* left: 10%; */
+        /* top: 58%; */
+        /* transform: translateY(-50%); */
+        padding: 5%;
+        width: 25vw;
         border-radius: 12px;
       }
 
 
       .right-box {
-        position: absolute;
-        right:10%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 300px;
-        /* background-color: #fce7f3;
-        padding: 2rem; */
+        /* position: absolute; */
+        /* right:10%; */
+        /* top: 50%; */
+        /* transform: translateY(-50%); */
+        padding: 5%;
+        width: 25vw;
         border-radius: 12px;
       }
 
       .center-top-box {
-        position: absolute;
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 300px;
-        /* background-color: #fce7f3; */
-        /* padding: 2rem; */
-        border-radius: 12px;
+        /* position: absolute; */
+        /* top: 5%; */
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
+        padding: 5%;
+        width: 25vw;
+        /* border-radius: 12px; */
       }
 
       .center-bottom-box {
-        position: absolute;
-        bottom: 5%;
-        left: 52%;
-        transform: translateX(-50%);
-        width: 300px;
-        /* background-color: #fce7f3;
-        padding: 2rem; */
+        /* position: absolute; */
+        /* bottom: 5%; */
+        /* left: 52%; */
+        /* transform: translateX(-50%); */
+        padding: 5%;
+        width: 25vw;
         border-radius: 12px;
-      }
+      } 
 
+      .grid-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+            /* gap: 20px; */
+            width: 100vw;
+            height: 100vh;
+            /* max-width: 1200px; */
+        }
+
+        .box {
+            /* padding: 20px; */
+            /* border-radius: 12px; */
+            background-color: transparent;
+            /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+        }
+         
+        .header {grid-column: 1/9; grid-row: 1 / 2;}
+        .left-box { grid-column: 2 / 4; grid-row: 4 / 6; align-self: center;   }
+        .right-box { grid-column: 6 / 8; grid-row: 4 / 6; align-self: center;  }
+        .center-top-box { grid-column: 4 / 6; grid-row: 2/ 4; }
+        .center-bottom-box { grid-column: 4 / 6; grid-row:  6/ 8; align-self: center;  }
+        .footer{grid-column: 1/9; grid-row: 9/10} 
+
+
+        /*  */
       .box-title {
         color: #D400A6;
         font-family: 'Inter', monospace;
@@ -214,11 +246,13 @@
 
        /* New Footer Styles */
        .footer {
+        /* margin-bottom: 0.5em; */
+        background-color: transparent;
         width: 100%;
         /* background: gray; */
         /* padding: 1rem 0; */
-        overflow: hidden;
-        position: relative;
+        /* overflow: hidden; */
+        /* position: relative; */
       }
 
       .footer-images {
@@ -251,6 +285,7 @@
   </head>
   <body>
     <div id="app">
+      <div class="grid-container">
       <div class="header">
         <div class="logo-section">
           <div class="logo"></div>
@@ -266,11 +301,11 @@
         </div>
       </div>
       
-      <div class="content-container">
+      <!-- <div class="content-container"> -->
         <div class="background-image"></div>
         <div class="grid-background"></div>
         
-        <div class="left-box">
+        <div class="box left-box">
           <svg viewBox="0 0 410 268" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_305_639)">
             <rect x="10.5" width="394" height="264" rx="16" fill="#FFFEF6" shape-rendering="crispEdges"/>
@@ -333,7 +368,7 @@
             
         </div>
 
-        <div class="center-top-box">
+        <div class="box center-top-box">
           <svg viewBox="0 0 410 276" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g filter="url(#filter0_d_305_608)">
             <rect x="10.5" width="394" height="271" rx="16" fill="#FFFEF6" shape-rendering="crispEdges"/>
@@ -409,7 +444,7 @@
             
         </div>
 
-        <div class="center-bottom-box">
+        <div class="box center-bottom-box">
           <svg viewBox="0 0 410 276" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g filter="url(#filter0_d_305_608)">
             <rect x="10.5" width="394" height="271" rx="16" fill="#FFFEF6" shape-rendering="crispEdges"/>
@@ -485,7 +520,7 @@
             
         </div>
 
-        <div class="right-box">
+        <div class="box right-box">
           <svg viewBox="0 0 409 276" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_305_670)">
             <rect x="10" width="394" height="271" rx="16" fill="#FFFEF6" shape-rendering="crispEdges"/>
@@ -546,9 +581,8 @@
             </filter>
             </defs>
             </svg>            
-
         </div>
-      </div>
+      <!-- </div> -->
 
       <div class="footer">
         <div class="footer-images">
@@ -574,6 +608,8 @@
         </div>
       </div>
     </div>
+  </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
